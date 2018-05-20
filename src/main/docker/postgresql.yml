@@ -1,0 +1,11 @@
+version: '2'
+services:
+    ldapauth-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/LDAPAuth/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=LDAPAuth
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

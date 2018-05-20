@@ -1,0 +1,12 @@
+version: '2'
+services:
+    ldapauth-app:
+        image: ldapauth
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://ldapauth-postgresql:5432/LDAPAuth
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+    ldapauth-postgresql:
+        extends:
+            file: postgresql.yml
+            service: ldapauth-postgresql
